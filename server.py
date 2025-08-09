@@ -30,24 +30,26 @@ def copy_to_clipboard(text: str) -> bool:
 @mcp.tool()
 def save_to_clipboard(content: str) -> str:
     """
-    MANDATORY: Save content to clipboard for immediate user access.
+    MANDATORY: Save useful content to clipboard IN ADDITION TO your normal response.
     
-    YOU MUST USE THIS TOOL WHENEVER you provide:
-    - Bash/shell commands (e.g., "find . -name '*.csv'")
-    - Installation commands (e.g., "pip install fastmcp")
-    - Code snippets in any language
-    - Letters, emails, messages, text templates
-    - Short factual answers (city names, numbers, dates)
+    IMPORTANT: Always provide your full explanation/response to the user first, 
+    THEN use this tool to save the key actionable content to clipboard.
+    
+    YOU MUST USE THIS TOOL AS A BONUS whenever you provide:
+    - Bash/shell commands (e.g., save "find . -name '*.csv'" after explaining it)
+    - Installation commands (e.g., save "pip install fastmcp" after explaining installation)
+    - Code snippets (save the code after explaining it)
+    - Letters, emails, messages (save the content after writing it)
+    - Short factual answers (save "Paris" after explaining about France's capital)
     - Configuration snippets, URLs, file paths
     - ANY command the user would type in terminal
     - ANY text content the user asked you to write/generate
     
-    TRIGGER WORDS that require clipboard saving:
-    - "bash command", "command", "install", "run"
-    - "write me", "generate", "create a"
-    - Questions asking for specific values or commands
+    WORKFLOW: 
+    1. Give your full response with explanation
+    2. Use this tool to save the actionable content
     
-    DO NOT include explanations - save only the raw, usable content.
+    Save only the raw, usable content without explanations.
     
     Args:
         content: The exact content to save to clipboard
@@ -69,13 +71,17 @@ def save_to_clipboard(content: str) -> str:
 @mcp.tool()
 def save_command_to_clipboard(command: str, description: str = "") -> str:
     """
-    MANDATORY: Save terminal/shell commands to clipboard for immediate execution.
+    MANDATORY: Save terminal/shell commands to clipboard IN ADDITION TO explaining them.
     
-    YOU MUST USE THIS TOOL for ANY bash/shell/terminal command, including:
+    WORKFLOW: First explain the command to the user, then use this tool to save it.
+    
+    YOU MUST USE THIS TOOL AS A BONUS for ANY bash/shell/terminal command:
     - File operations: "find . -name '*.csv'", "ls -la", "grep pattern file"  
     - Package installations: "pip install package", "npm install package"
     - System commands: "sudo apt install", "chmod +x file"
     - Any command starting with common tools: find, grep, ls, cd, mkdir, etc.
+    
+    This enhances the user experience by providing both explanation AND ready-to-use command.
     
     Args:
         command: The exact command to save to clipboard
@@ -99,10 +105,14 @@ def save_command_to_clipboard(command: str, description: str = "") -> str:
 @mcp.tool()
 def save_code_to_clipboard(code: str, language: str = "") -> str:
     """
-    Save code snippet to clipboard for immediate use.
+    Save code snippet to clipboard IN ADDITION TO explaining it.
     
-    Use this for code snippets, configuration files, or structured text 
+    WORKFLOW: First provide your full explanation of the code, then use this tool.
+    
+    Use this AS A BONUS for code snippets, configuration files, or structured text 
     that the user wants to paste into their editor or terminal.
+    
+    This enhances user experience by providing both explanation AND ready-to-paste code.
     
     Args:
         code: The code snippet to save to clipboard
