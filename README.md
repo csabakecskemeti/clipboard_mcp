@@ -20,6 +20,12 @@ When you ask: "What's the capital of Hungary?"
 - Claude explains about Budapest being the capital
 - **AND** puts just `Budapest` on your clipboard for quick use
 
+## Demo
+
+![Clipboard MCP in Action](clipboard_mcp.gif)
+
+*The clipboard MCP server working with LM Studio - automatically saving useful content to clipboard while providing full responses*
+
 ## Quick Start
 
 ### Automatic Setup (Recommended)
