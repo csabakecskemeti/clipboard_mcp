@@ -2,6 +2,9 @@
 
 An MCP server that allows LLM models to save relevant output directly to your system clipboard for immediate use.
 
+## Note 
+Tested on Linux only 
+
 ## What it does
 
 This MCP server provides tools that allow Claude Code (or other MCP-compatible tools) to:
