@@ -3,7 +3,7 @@
 An MCP server that allows LLM models to save relevant output directly to your system clipboard for immediate use.
 
 ## Note 
-Tested on Linux only 
+Tested on Linux and MacOS 
 
 ## What it does
 
